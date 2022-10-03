@@ -1,0 +1,23 @@
+.container-card {
+    background-color: rgb(154, 175, 199);
+    border-radius: 5px;
+    width: 320px;
+    height: 370px;
+
+    box-shadow: 22px 19px 34px -15px rgba(255, 255, 255, 0.5);
+    transition: 1s;
+    transition: transform 0.5s ease-out;
+}
+
+.imagen {
+    height: 250px;
+    width: 320px;
+    border-radius: 5px;
+    object-fit: cover;
+    object-position: left;
+    /* border: 1px solid black */
+}
+
+.container-card:hover {
+    transform: scale(1.06);
+}

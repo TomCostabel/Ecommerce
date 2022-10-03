@@ -1,0 +1,13 @@
+body {
+    background-color: black;
+}
+
+.container-cards {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 30px;
+    margin-top: 4px;
+    margin-left: 65px;
+}
