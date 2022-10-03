@@ -1,0 +1,51 @@
+.container-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #683217;
+    width: 250px;
+    height: 50px;
+    margin-top: 30px;
+    border-radius: 50px;
+    margin-inline: auto;
+    margin-top: 20px;
+    /* From https://css.glass */
+    background: rgba(255, 255, 255, 0.27);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(8.8px);
+    -webkit-backdrop-filter: blur(8.8px);
+}
+
+.container-cards {
+    margin-top: -2px;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 35px;
+    margin-left: -15px;
+}
+.individual {
+    /* margin-left: 20px; */
+    margin-inline: auto;
+    /* color: white; */
+    /* From https://css.glass */
+    background: rgba(255, 255, 255, 0.62);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(8.8px);
+    -webkit-backdrop-filter: blur(8.8px);
+}
+.botonPrevNext {
+    background-color: #eee2e2;
+    border-color: rgb(0, 0, 0);
+    color: rgb(0, 0, 0);
+    display: block;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    cursor: pointer;
+    margin-inline: auto;
+    box-shadow: 2px 2px 7px -2px black;
+}
