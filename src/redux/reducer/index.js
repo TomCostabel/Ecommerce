@@ -1,8 +1,13 @@
-import { GET_ALL_PRODUCTS, GET_PRODUCT_ID } from "../actions/index.js";
+import {
+    GET_ALL_PRODUCTS,
+    GET_PRODUCT_ID,
+    ADD_PRODUCT_CARRITO,
+} from "../actions/index.js";
 
 const initialState = {
     productos: [],
     productDetail: [],
+    carrito: [],
 };
 
 const rootReducer = (state = initialState, action) => {
@@ -16,6 +21,11 @@ const rootReducer = (state = initialState, action) => {
             return {
                 ...state,
                 productDetail: action.payload,
+            };
+        case ADD_PRODUCT_CARRITO:
+            return {
+                ...state,
+                carrito: [...state.carrito, action.payload],
             };
 
         default:

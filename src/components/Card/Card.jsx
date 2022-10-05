@@ -1,8 +1,15 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import { addProductCarrito } from "../../redux/actions";
 import "../Card/Card.css";
 
 export default function Card(props) {
+    const dispatch = useDispatch();
+    const chango = useSelector((state) => state.carrito);
+
+    console.log("esto es chango", chango);
+
     return (
         <div className="container-card">
             <Link to={`/Home/Product/${props.id}`}>
@@ -14,6 +21,12 @@ export default function Card(props) {
             </Link>
             <p>US$ {props.price}</p>
             <h6 className="title-font">{props.title}</h6>
+            <button
+                value={props.title}
+                onClick={(e) => dispatch(addProductCarrito(e.target.value))}
+            >
+                chango
+            </button>
         </div>
     );
 }

@@ -9,6 +9,7 @@ export default function Home() {
     const products = useSelector((state) => state.productos);
     const [datos, setDatos] = useState([]);
     const [currentPage, setCurrentPage] = useState(0);
+    const [loading, setLoading] = useState(true);
 
     const [productsActuales, setProductsActuales] = useState([]);
 
@@ -53,7 +54,7 @@ export default function Home() {
         );
         setCurrentPage(prevPage);
     };
-    console.log("estos son los productos", products);
+    // console.log("estos son los productos", products);
 
     const allProducts = productsActuales?.map((e) => {
         return (
@@ -67,7 +68,7 @@ export default function Home() {
             />
         );
     });
-    console.log("acaaa", allProducts);
+    // console.log("acaaa", allProducts);
 
     const [buscador, setBuscador] = useState([]);
     const handleChange = (e) => {
@@ -87,23 +88,33 @@ export default function Home() {
                   })
               );
     }, [buscador, products]);
+
+    setTimeout(() => {
+        setLoading(false);
+    }, 1500);
+
     return (
         <div>
-            <input
-                type="text"
-                placeholder="Buscador..."
-                value={buscador}
-                onChange={(e) => handleChange(e)}
-            />
-            <div className="container-cards">
-                <Pagination
-                    items={allProducts}
-                    currentPage={currentPage}
-                    nextHandler={nextHandler}
-                    prevHandler={prevHandler}
-                />
-            </div>
-            {/* <h3 className="container-cards">{allProducts}</h3> */}
+            {loading ? (
+                <h1>Cargando</h1>
+            ) : (
+                <div>
+                    <input
+                        type="text"
+                        placeholder="Buscador..."
+                        value={buscador}
+                        onChange={(e) => handleChange(e)}
+                    />
+                    <div className="container-cards">
+                        <Pagination
+                            items={allProducts}
+                            currentPage={currentPage}
+                            nextHandler={nextHandler}
+                            prevHandler={prevHandler}
+                        />
+                    </div>
+                </div>
+            )}
         </div>
     );
 }

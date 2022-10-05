@@ -1,6 +1,7 @@
 import axios from "axios";
 export const GET_ALL_PRODUCTS = "GET_ALL_PRODUCTS";
 export const GET_PRODUCT_ID = "GET_PRODUCT_ID";
+export const ADD_PRODUCT_CARRITO = "ADD_PRODUCT_CARRITO";
 
 export function getAllProducts() {
     return async function (dispatch) {
@@ -28,4 +29,15 @@ export function getProductDetail(id) {
             console.log(err);
         }
     };
+}
+
+export function addProductCarrito(payload) {
+    try {
+        return {
+            type: ADD_PRODUCT_CARRITO,
+            payload,
+        };
+    } catch (err) {
+        console.log(err);
+    }
 }
