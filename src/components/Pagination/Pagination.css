@@ -26,17 +26,16 @@
     gap: 35px;
     margin-left: -15px;
 }
-.individual {
-    /* margin-left: 20px; */
+/* .individual {
+  
     margin-inline: auto;
-    /* color: white; */
-    /* From https://css.glass */
+  
     background: rgba(255, 255, 255, 0.62);
     border-radius: 16px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(8.8px);
     -webkit-backdrop-filter: blur(8.8px);
-}
+} */
 .botonPrevNext {
     background-color: #eee2e2;
     border-color: rgb(0, 0, 0);

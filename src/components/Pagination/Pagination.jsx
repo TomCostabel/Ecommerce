@@ -6,17 +6,14 @@ export default function Pagination(props) {
         <div>
             <div className="container-buttons">
                 <h3
-                    className={"individual" && "botonPrevNext"}
+                    className="botonPrevNext"
                     onClick={props.prevHandler}
                     disabled={props.currentPage <= 1 && true}
                 >
                     &#8592;
                 </h3>
                 <h4>PAGE {props.currentPage + 1}</h4>
-                <h3
-                    className={"individual" && "botonPrevNext"}
-                    onClick={props.nextHandler}
-                >
+                <h3 className="botonPrevNext" onClick={props.nextHandler}>
                     &#8594;
                 </h3>
             </div>

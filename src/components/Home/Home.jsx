@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { getAllProducts } from "../../redux/actions";
 import Card from "../Card/Card";
 import "../Home/Home.css";
+import NavBar from "../NavBar/NavBar";
 import Pagination from "../Pagination/Pagination";
 
 export default function Home() {
@@ -99,6 +100,8 @@ export default function Home() {
                 <h1>Cargando</h1>
             ) : (
                 <div>
+                    <NavBar />
+
                     <input
                         type="text"
                         placeholder="Buscador..."
