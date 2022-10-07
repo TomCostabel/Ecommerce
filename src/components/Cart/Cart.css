@@ -1,0 +1,10 @@
+.container-cada-producto {
+    display: flex;
+    border: 1px solid black;
+    max-width: 1000px;
+    background-color: white;
+}
+
+.image {
+    max-width: 100px;
+}
