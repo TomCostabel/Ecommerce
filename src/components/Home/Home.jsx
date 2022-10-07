@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getAllProducts } from "../../redux/actions";
 import Card from "../Card/Card";
+import Filters from "../Filters/Filters";
 import "../Home/Home.css";
 import NavBar from "../NavBar/NavBar";
 import Pagination from "../Pagination/Pagination";
@@ -11,6 +12,7 @@ export default function Home() {
     const [datos, setDatos] = useState([]);
     const [currentPage, setCurrentPage] = useState(0);
     const [loading, setLoading] = useState(true);
+    // const categorys = useSelector((state) => state.categorys);
 
     const [productsActuales, setProductsActuales] = useState([]);
 
@@ -55,7 +57,6 @@ export default function Home() {
         );
         setCurrentPage(prevPage);
     };
-    // console.log("estos son los productos", products);
 
     const allProducts = productsActuales?.map((e) => {
         return (
@@ -69,7 +70,6 @@ export default function Home() {
             />
         );
     });
-    // console.log("acaaa", allProducts);
 
     const [buscador, setBuscador] = useState([]);
     const handleChange = (e) => {
@@ -108,6 +108,8 @@ export default function Home() {
                         value={buscador}
                         onChange={(e) => handleChange(e)}
                     />
+
+                    <Filters />
                     <div className="container-cards">
                         <Pagination
                             items={allProducts}

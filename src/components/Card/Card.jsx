@@ -1,14 +1,16 @@
 import React from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
+// import { useSelector } from "react-redux";
+
 import { Link } from "react-router-dom";
 import { addProductCarrito } from "../../redux/actions";
 import "../Card/Card.css";
 
 export default function Card(props) {
     const dispatch = useDispatch();
-    const chango = useSelector((state) => state.carrito);
+    // const chango = useSelector((state) => state.carrito);
 
-    console.log("esto es chango", chango);
+    // console.log("esto es chango", chango);
 
     return (
         <div className="container-card">
