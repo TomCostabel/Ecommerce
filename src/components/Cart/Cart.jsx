@@ -11,8 +11,12 @@ export default function Carrito() {
     useEffect(() => {
         dispatch(getAllProducts());
     }, [dispatch]);
+    console.log(carrito);
+    var num = 0;
 
-    return (
+    return !carrito.length ? (
+        <h3>Carrito Vacio</h3>
+    ) : (
         <div>
             <button onClick={() => console.log("Hola", carrito)}>
                 botoncito
@@ -21,15 +25,19 @@ export default function Carrito() {
             {products?.map((e) => {
                 if (carrito?.includes(e.title))
                     return (
-                        <div key={e.id} className="container-cada-producto">
-                            <img
-                                className="image"
-                                src={e.images[0]}
-                                alt="fotoproduct"
-                            />
-                            <h5>{e.title}</h5>
-                            <h6>{e.description}</h6>
-                            <p>US$ {e.price}</p>
+                        <div>
+                            <div key={e.id} className="container-cada-producto">
+                                <img
+                                    className="image"
+                                    src={e.images[0]}
+                                    alt="fotoproduct"
+                                />
+
+                                <h3>{num}</h3>
+                                <h5>{e.title}</h5>
+
+                                <p>US$ {e.price}</p>
+                            </div>
                         </div>
                     );
             })}

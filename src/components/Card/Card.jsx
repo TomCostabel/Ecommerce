@@ -8,9 +8,6 @@ import "../Card/Card.css";
 
 export default function Card(props) {
     const dispatch = useDispatch();
-    // const chango = useSelector((state) => state.carrito);
-
-    // console.log("esto es chango", chango);
 
     return (
         <div className="container-card">

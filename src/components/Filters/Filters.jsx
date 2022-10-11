@@ -5,22 +5,25 @@ import { filterByCategory, getAllProducts } from "../../redux/actions";
 
 export default function Filters() {
     const dispatch = useDispatch();
-    const products = useSelector((state) => state.productos);
+    const products = useSelector((state) => state.productos2);
 
     function handleFilterByCategory(e) {
         e.target.value === "none"
             ? dispatch(getAllProducts())
             : dispatch(filterByCategory(e.target.value));
-        // setCurrentPage(0);
     }
+    const array = [];
+    products.map((e) =>
+        !array.includes(e.category) ? array.push(e.category) : null
+    );
     return (
         <div>
             <select onChange={(e) => handleFilterByCategory(e)}>
                 <option>Categorys</option>
 
-                {products?.map((e) => (
+                {array?.map((e) => (
                     <option value={e.name} key={e.id}>
-                        {e.category}
+                        {e}
                     </option>
                 ))}
             </select>

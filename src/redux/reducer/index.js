@@ -7,22 +7,19 @@ import {
 
 const initialState = {
     productos: [],
+    productos2: [],
     productDetail: [],
     carrito: [],
-    categorys: [],
 };
 
 const rootReducer = (state = initialState, action) => {
     switch (action.type) {
         case GET_ALL_PRODUCTS:
-            const array = [];
-            state.productos?.forEach((el) => {
-                if (!array.includes(el.category)) array.push(el.category);
-            });
             return {
                 ...state,
                 productos: action.payload,
-                categorys: array,
+
+                productos2: action.payload,
             };
         case GET_PRODUCT_ID:
             return {
@@ -35,7 +32,7 @@ const rootReducer = (state = initialState, action) => {
                 carrito: [...state.carrito, action.payload],
             };
         case FILTER_BY_CATEGORY:
-            const productos2 = state.productos;
+            const productos2 = state.productos2;
             const filterCategory =
                 action.payload === "none"
                     ? productos2

@@ -16,7 +16,7 @@ export default function Home() {
 
     const [productsActuales, setProductsActuales] = useState([]);
 
-    const itemXPage = 8;
+    const itemXPage = 10;
     const dispatch = useDispatch();
     useEffect(() => {
         dispatch(getAllProducts());
