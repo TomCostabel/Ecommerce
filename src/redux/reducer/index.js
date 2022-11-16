@@ -27,6 +27,8 @@ const rootReducer = (state = initialState, action) => {
                 productDetail: action.payload,
             };
         case ADD_PRODUCT_CARRITO:
+            // const arr = [];
+
             return {
                 ...state,
                 carrito: [...state.carrito, action.payload],

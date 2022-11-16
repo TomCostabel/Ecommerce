@@ -12,7 +12,6 @@ export default function Carrito() {
         dispatch(getAllProducts());
     }, [dispatch]);
     console.log(carrito);
-    var num = 0;
 
     return !carrito.length ? (
         <h3>Carrito Vacio</h3>
@@ -23,17 +22,22 @@ export default function Carrito() {
             </button>
 
             {products?.map((e) => {
+                var count = 0;
+
                 if (carrito?.includes(e.title))
                     return (
-                        <div>
-                            <div key={e.id} className="container-cada-producto">
+                        <div key={e.id}>
+                            <div className="container-cada-producto">
                                 <img
                                     className="image"
                                     src={e.images[0]}
                                     alt="fotoproduct"
                                 />
 
-                                <h3>{num}</h3>
+                                {carrito.forEach((el) =>
+                                    el === e.title ? (count = count + 1) : count
+                                )}
+                                <h3>{count}</h3>
                                 <h5>{e.title}</h5>
 
                                 <p>US$ {e.price}</p>

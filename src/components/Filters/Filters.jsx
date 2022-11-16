@@ -22,7 +22,7 @@ export default function Filters() {
                 <option>Categorys</option>
 
                 {array?.map((e) => (
-                    <option value={e.name} key={e.id}>
+                    <option key={e} value={e.name}>
                         {e}
                     </option>
                 ))}
