@@ -13,6 +13,8 @@ export default function Carrito() {
     }, [dispatch]);
     console.log(carrito);
 
+    var totalCantidad = 0;
+
     return !carrito.length ? (
         <h3>Carrito Vacio</h3>
     ) : (
@@ -20,7 +22,6 @@ export default function Carrito() {
             <button onClick={() => console.log("Hola", carrito)}>
                 botoncito
             </button>
-
             {products?.map((e) => {
                 var count = 0;
 
@@ -37,7 +38,15 @@ export default function Carrito() {
                                 {carrito.forEach((el) =>
                                     el === e.title ? (count = count + 1) : count
                                 )}
-                                <h3>{count}</h3>
+
+                                {carrito.forEach((el) =>
+                                    el === e.title
+                                        ? (totalCantidad =
+                                              totalCantidad + e.price)
+                                        : count
+                                )}
+
+                                <h3>{count} </h3>
                                 <h5>{e.title}</h5>
 
                                 <p>US$ {e.price}</p>
@@ -45,6 +54,8 @@ export default function Carrito() {
                         </div>
                     );
             })}
+
+            <h1>Total ${totalCantidad}</h1>
         </div>
     );
 }
