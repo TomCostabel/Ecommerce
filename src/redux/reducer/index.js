@@ -27,8 +27,6 @@ const rootReducer = (state = initialState, action) => {
                 productDetail: action.payload,
             };
         case ADD_PRODUCT_CARRITO:
-            // const arr = [];
-
             return {
                 ...state,
                 carrito: [...state.carrito, action.payload],
@@ -36,7 +34,7 @@ const rootReducer = (state = initialState, action) => {
         case FILTER_BY_CATEGORY:
             const productos2 = state.productos2;
             const filterCategory =
-                action.payload === "none"
+                action.payload === "all"
                     ? productos2
                     : productos2?.filter((e) => e.category === action.payload);
 

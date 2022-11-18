@@ -19,7 +19,7 @@ export default function Filters() {
     return (
         <div>
             <select onChange={(e) => handleFilterByCategory(e)}>
-                <option>Categorys</option>
+                <option value={"all"}>Categorys</option>
 
                 {array?.map((e) => (
                     <option key={e} value={e.name}>
