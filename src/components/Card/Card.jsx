@@ -1,6 +1,6 @@
-import React, { useState } from "react";
-import { useDispatch } from "react-redux";
-// import { useSelector } from "react-redux";
+import React from "react";
+
+import { useDispatch, useSelector } from "react-redux";
 
 import { Link } from "react-router-dom";
 import { addProductCarrito } from "../../redux/actions";
@@ -8,6 +8,11 @@ import "../Card/Card.css";
 
 export default function Card(props) {
     const dispatch = useDispatch();
+    const carrito = useSelector((state) => state.carrito);
+
+    const saveLocal = () => {
+        localStorage.setItem("carrito", JSON.stringify(carrito));
+    };
 
     return (
         <div className="container-card">
@@ -22,7 +27,10 @@ export default function Card(props) {
             <h6 className="title-font">{props.title}</h6>
             <button
                 value={props.title}
-                onClick={(e) => dispatch(addProductCarrito(e.target.value))}
+                onClick={(e) => {
+                    dispatch(addProductCarrito(e.target.value));
+                    saveLocal();
+                }}
             >
                 chango
             </button>

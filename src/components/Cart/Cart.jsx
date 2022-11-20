@@ -1,29 +1,24 @@
-import React, { useState } from "react";
-import { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { getAllProducts } from "../../redux/actions";
+import React from "react";
+
+import { useSelector } from "react-redux";
+
 import "../Cart/Cart.css";
-const cartFromLocalStorage = JSON.parse(localStorage.getItem("cart") || "[]");
 
 export default function Carrito() {
     const products = useSelector((state) => state.productos);
     const carrito = useSelector((state) => state.carrito);
-    // const dispatch = useDispatch();
-    const [cart, setCart] = useState(cartFromLocalStorage);
+    let changuito = JSON.parse(localStorage.getItem("carrito")) || [];
 
-    useEffect(() => {
-        localStorage.setItem("cart", JSON.stringify(cart));
-    }, [cart, carrito]);
     var totalCantidad = 0;
 
     return !carrito.length ? (
-        <button onClick={() => console.log("esto es cart", cart)}>
+        <button onClick={() => console.log("esto es cart", carrito)}>
             botoncito
         </button>
     ) : (
         // <h3>Carrito Vacio</h3>
         <div>
-            <button onClick={() => console.log("esto es cart", cart)}>
+            <button onClick={() => console.log("esto es cart", carrito)}>
                 botoncito
             </button>
             {products?.map((e) => {
