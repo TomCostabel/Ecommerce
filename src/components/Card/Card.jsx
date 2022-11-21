@@ -1,5 +1,4 @@
 import React from "react";
-import { useEffect } from "react";
 
 import { useDispatch, useSelector } from "react-redux";
 
@@ -9,12 +8,9 @@ import "../Card/Card.css";
 
 export default function Card(props) {
     const dispatch = useDispatch();
-    const carrito = useSelector((state) => state.carrito);
+    // const carrito = useSelector((state) => state.carrito);
 
-    useEffect(() => {
-        localStorage.setItem("carrito", JSON.stringify(carrito));
-    }, [carrito]);
-
+    // localStorage.setItem("carrito", JSON.stringify(carrito));
     return (
         <div className="container-card">
             <Link to={`/Home/Product/${props.id}`}>

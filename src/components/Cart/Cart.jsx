@@ -5,17 +5,17 @@ import { useDispatch, useSelector } from "react-redux";
 import { getAllProducts } from "../../redux/actions";
 
 import "../Cart/Cart.css";
-let localStorageCart = JSON.parse(localStorage.getItem("carrito")) || [];
+// let localStorageCart = JSON.parse(localStorage.getItem("carrito")) || [];
 
 export default function Carrito() {
     const dispatch = useDispatch();
     const products = useSelector((state) => state.productos);
 
-    const [cart, setCart] = useState(localStorageCart);
+    const [cart, setCart] = useState([]);
     useEffect(() => {
         dispatch(getAllProducts());
-        let changuito = JSON.parse(localStorage.getItem("carrito")) || [];
-        setCart(changuito);
+        let changuito2 = JSON.parse(localStorage.getItem("carrito")) || [];
+        setCart(changuito2);
     }, [dispatch, setCart]);
 
     var totalCantidad = 0;

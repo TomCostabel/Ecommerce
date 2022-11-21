@@ -27,6 +27,12 @@ const rootReducer = (state = initialState, action) => {
                 productDetail: action.payload,
             };
         case ADD_PRODUCT_CARRITO:
+            let changuito = JSON.parse(localStorage.getItem("carrito")) || [];
+
+            localStorage.setItem(
+                "carrito",
+                JSON.stringify([...changuito, action.payload])
+            );
             return {
                 ...state,
                 carrito: [...state.carrito, action.payload],
