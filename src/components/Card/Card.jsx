@@ -1,4 +1,5 @@
 import React from "react";
+import { useEffect } from "react";
 
 import { useDispatch, useSelector } from "react-redux";
 
@@ -10,9 +11,9 @@ export default function Card(props) {
     const dispatch = useDispatch();
     const carrito = useSelector((state) => state.carrito);
 
-    const saveLocal = () => {
+    useEffect(() => {
         localStorage.setItem("carrito", JSON.stringify(carrito));
-    };
+    }, [carrito]);
 
     return (
         <div className="container-card">
@@ -29,7 +30,6 @@ export default function Card(props) {
                 value={props.title}
                 onClick={(e) => {
                     dispatch(addProductCarrito(e.target.value));
-                    saveLocal();
                 }}
             >
                 chango

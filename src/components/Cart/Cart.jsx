@@ -1,30 +1,38 @@
-import React from "react";
+import React, { useState } from "react";
+import { useEffect } from "react";
 
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { getAllProducts } from "../../redux/actions";
 
 import "../Cart/Cart.css";
+let localStorageCart = JSON.parse(localStorage.getItem("carrito")) || [];
 
 export default function Carrito() {
+    const dispatch = useDispatch();
     const products = useSelector((state) => state.productos);
-    const carrito = useSelector((state) => state.carrito);
-    let changuito = JSON.parse(localStorage.getItem("carrito")) || [];
+
+    const [cart, setCart] = useState(localStorageCart);
+    useEffect(() => {
+        dispatch(getAllProducts());
+        let changuito = JSON.parse(localStorage.getItem("carrito")) || [];
+        setCart(changuito);
+    }, [dispatch, setCart]);
 
     var totalCantidad = 0;
 
-    return !carrito.length ? (
-        <button onClick={() => console.log("esto es cart", carrito)}>
+    return !cart.length ? (
+        <button onClick={() => console.log("esto es cart", cart)}>
             botoncito
         </button>
     ) : (
-        // <h3>Carrito Vacio</h3>
         <div>
-            <button onClick={() => console.log("esto es cart", carrito)}>
+            <button onClick={() => console.log("esto es cart 2", cart)}>
                 botoncito
             </button>
             {products?.map((e) => {
                 var count = 0;
 
-                if (carrito?.includes(e.title))
+                if (cart?.includes(e.title))
                     return (
                         <div key={e.id}>
                             <div className="container-cada-producto">
@@ -34,11 +42,11 @@ export default function Carrito() {
                                     alt="fotoproduct"
                                 />
 
-                                {carrito.forEach((el) =>
+                                {cart.forEach((el) =>
                                     el === e.title ? (count = count + 1) : count
                                 )}
 
-                                {carrito.forEach((el) =>
+                                {cart.forEach((el) =>
                                     el === e.title
                                         ? (totalCantidad =
                                               totalCantidad + e.price)
