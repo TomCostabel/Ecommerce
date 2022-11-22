@@ -45,11 +45,12 @@ export default function Carrito() {
                     };
                     //-------------------------------------- RESTAR PRODUCTOS AL LocalStorage ------------------//
 
-                    const restarProducto = (value) => {
-                        let restProduct = cart.find((e) => e === value);
-                        let xd = cart.filter((e) => e !== value);
-                        console.log(xd);
-                        // localStorage.setItem("carrito", JSON.stringify(xd));
+                    const restarProducto = (cart, value) => {
+                        let arr1 = cart;
+                        arr1.splice(0, arr1.indexOf(2));
+                        // let arr2 = cart.splice(cart.indexOf(value) + 1);
+                        // let arrFinal = arr1.concat(arr2);
+                        console.log(arr1);
                     };
                     //-------------------------------------- SUMAR PRODUCTOS AL LocalStorage ------------------//
 
