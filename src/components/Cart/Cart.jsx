@@ -33,11 +33,23 @@ export default function Carrito() {
                 var count = 0;
 
                 if (cart?.includes(e.title)) {
+                    //-------------------------------------- ELIMINAR TODOS DEL LocalStorage ------------------//
+                    const deleteAllProducts = (value) => {
+                        let deleteAll = cart.filter((e) => e !== value);
+                        setCart(deleteAll);
+
+                        localStorage.setItem(
+                            "carrito",
+                            JSON.stringify(deleteAll)
+                        );
+                    };
                     //-------------------------------------- RESTAR PRODUCTOS AL LocalStorage ------------------//
 
                     const restarProducto = (value) => {
                         let restProduct = cart.find((e) => e === value);
-                        console.log(restProduct);
+                        let xd = cart.filter((e) => e !== value);
+                        console.log(xd);
+                        // localStorage.setItem("carrito", JSON.stringify(xd));
                     };
                     //-------------------------------------- SUMAR PRODUCTOS AL LocalStorage ------------------//
 
@@ -81,6 +93,11 @@ export default function Carrito() {
                                 <h5>{e.title}</h5>
 
                                 <p>US$ {e.price}</p>
+                                <button
+                                    onClick={() => deleteAllProducts(e.title)}
+                                >
+                                    ❌
+                                </button>
                             </div>
                         </div>
                     );
