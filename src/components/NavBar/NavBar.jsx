@@ -12,19 +12,19 @@ export default function NavBar() {
         <div>
             <Link to="/Home/Carrito">
                 <h1>Carrito</h1>
-
-                <Logout />
-                <Profile />
             </Link>
+
+            <Logout />
+            <Profile />
         </div>
     ) : (
         <div>
             <Link to="/Home/Carrito">
                 <h1>Carrito</h1>
-                <LoginButton />
-
-                <Profile />
             </Link>
+            <LoginButton />
+
+            <Profile />
         </div>
     );
 }

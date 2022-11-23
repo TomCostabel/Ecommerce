@@ -45,12 +45,13 @@ export default function Carrito() {
                     };
                     //-------------------------------------- RESTAR PRODUCTOS AL LocalStorage ------------------//
 
-                    const restarProducto = (cart, value) => {
-                        let arr1 = cart;
-                        arr1.splice(0, arr1.indexOf(2));
-                        // let arr2 = cart.splice(cart.indexOf(value) + 1);
-                        // let arrFinal = arr1.concat(arr2);
+                    const restarProducto = (value) => {
+                        let arr1 = [...cart];
+                        arr1.splice(arr1.indexOf(value), 1);
+
+                        setCart(arr1);
                         console.log(arr1);
+                        localStorage.setItem("carrito", JSON.stringify(arr1));
                     };
                     //-------------------------------------- SUMAR PRODUCTOS AL LocalStorage ------------------//
 
