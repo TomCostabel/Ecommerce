@@ -8,22 +8,33 @@ import NavBar from "../NavBar/NavBar";
 import Pagination from "../Pagination/Pagination";
 
 export default function Home() {
-    const products = useSelector((state) => state.productos);
-    const [datos, setDatos] = useState([]);
-    const [currentPage, setCurrentPage] = useState(0);
-    const [loading, setLoading] = useState(true);
-    // const categorys = useSelector((state) => state.categorys);
+    //------------------------------ "CONSTANTES" -------------------------------------------------->
 
     const [productsActuales, setProductsActuales] = useState([]);
-
-    const itemXPage = 10;
+    const products = useSelector((state) => state.productos);
+    const [currentPage, setCurrentPage] = useState(0);
+    const [loading, setLoading] = useState(true);
+    const [buscador, setBuscador] = useState([]);
+    const [datos, setDatos] = useState([]);
     const dispatch = useDispatch();
+    const itemXPage = 10;
+
+    //------------------------------ "handleChange" --------------------------------------------------->
+
+    const handleChange = (e) => {
+        setBuscador(e.target.value);
+        setCurrentPage(0);
+    };
+    //------------------------------ "useEffect" --------------------------------------------------->
+
     useEffect(() => {
         dispatch(getAllProducts());
     }, [dispatch]);
+
+    //---------------------------------//
+
     useEffect(() => {
         if (products.length && !datos.length) setDatos(products);
-
         setProductsActuales(
             datos.slice(
                 currentPage * itemXPage,
@@ -32,50 +43,8 @@ export default function Home() {
         );
     }, [dispatch, currentPage, datos, products, itemXPage]);
 
-    const nextHandler = () => {
-        const nextPage = currentPage + 1;
+    //---------------------------------//
 
-        const firstIndex = nextPage * itemXPage;
-
-        if (productsActuales.length < 8 && currentPage !== 0) return;
-
-        setProductsActuales(
-            [...datos].slice(firstIndex, firstIndex + itemXPage)
-        );
-        setCurrentPage(nextPage);
-    };
-
-    const prevHandler = () => {
-        const prevPage = currentPage - 1;
-
-        if (prevPage < 0) return;
-
-        const firstIndex = prevPage * itemXPage;
-
-        setProductsActuales(
-            [...datos].slice(firstIndex, firstIndex + itemXPage)
-        );
-        setCurrentPage(prevPage);
-    };
-
-    const allProducts = productsActuales?.map((e) => {
-        return (
-            <Card
-                key={e.id}
-                id={e.id}
-                title={e.title}
-                images={e.images}
-                price={e.price}
-                category={e.category}
-            />
-        );
-    });
-
-    const [buscador, setBuscador] = useState([]);
-    const handleChange = (e) => {
-        setBuscador(e.target.value);
-        setCurrentPage(0);
-    };
     useEffect(() => {
         !buscador.length
             ? setDatos(products)
@@ -90,29 +59,68 @@ export default function Home() {
               );
     }, [buscador, products]);
 
+    //------------------------------ "Next and Prev" ------------------------------------------------>
+
+    const nextHandler = () => {
+        const nextPage = currentPage + 1;
+        const firstIndex = nextPage * itemXPage;
+
+        if (productsActuales.length < 8 && currentPage !== 0) return;
+        setProductsActuales(
+            [...datos].slice(firstIndex, firstIndex + itemXPage)
+        );
+        setCurrentPage(nextPage);
+    };
+
+    //---------------------------------//
+
+    const prevHandler = () => {
+        const prevPage = currentPage - 1;
+
+        if (prevPage < 0) return;
+
+        const firstIndex = prevPage * itemXPage;
+
+        setProductsActuales(
+            [...datos].slice(firstIndex, firstIndex + itemXPage)
+        );
+        setCurrentPage(prevPage);
+    };
+
     setTimeout(() => {
         setLoading(false);
     }, 1500);
 
+    //------------------------------ "Return" ------------------------------------------------>
+
     return (
-        <div>
+        <>
             {loading ? (
                 <h1>Cargando</h1>
             ) : (
                 <div>
                     <NavBar />
-
                     <input
                         type="text"
                         placeholder="Buscador..."
                         value={buscador}
                         onChange={(e) => handleChange(e)}
                     />
-
                     <Filters />
                     <div className="container-cards">
                         <Pagination
-                            items={allProducts}
+                            items={productsActuales?.map((e) => {
+                                return (
+                                    <Card
+                                        key={e.id}
+                                        id={e.id}
+                                        title={e.title}
+                                        images={e.images}
+                                        price={e.price}
+                                        category={e.category}
+                                    />
+                                );
+                            })}
                             currentPage={currentPage}
                             nextHandler={nextHandler}
                             prevHandler={prevHandler}
@@ -120,6 +128,6 @@ export default function Home() {
                     </div>
                 </div>
             )}
-        </div>
+        </>
     );
 }
