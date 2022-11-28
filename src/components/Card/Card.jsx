@@ -9,7 +9,7 @@ export default function Card(props) {
 
     return (
         <div className="container-card">
-            <Link to={`/Home/Product/${props.id}`}>
+            <Link to={`/Product/${props.id}`}>
                 <img
                     className="imagen"
                     src={props.images[0]}

@@ -16,7 +16,7 @@ export default function NavBar() {
 
     return isAuthenticated ? (
         <div>
-            <Link to="/Home/Carrito">
+            <Link to="/Carrito">
                 <h1>Carrito</h1>
             </Link>
 

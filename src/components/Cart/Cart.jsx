@@ -64,6 +64,8 @@ export default function Carrito() {
                         );
                     };
 
+                    //-------------------------------------- Return ----------------------------------------//
+
                     return (
                         <div key={e.id}>
                             <div className="container-cada-producto">
