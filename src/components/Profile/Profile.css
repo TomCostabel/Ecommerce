@@ -1,0 +1,8 @@
+.prueba {
+    display: flex;
+    justify-content: start;
+}
+
+.profile-container {
+    border: solid 3px black;
+}

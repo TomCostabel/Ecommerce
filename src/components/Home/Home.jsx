@@ -107,7 +107,7 @@ export default function Home() {
                         onChange={(e) => handleChange(e)}
                     />
                     <Filters />
-                    <div className="container-cards">
+                    <div>
                         <Pagination
                             items={productsActuales?.map((e) => {
                                 return (

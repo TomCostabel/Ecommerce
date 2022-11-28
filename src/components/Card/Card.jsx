@@ -8,7 +8,10 @@ export default function Card(props) {
     const dispatch = useDispatch();
 
     return (
-        <div className="container-card">
+        <div
+            className="container-card  
+        "
+        >
             <Link to={`/Product/${props.id}`}>
                 <img
                     className="imagen"
@@ -24,7 +27,7 @@ export default function Card(props) {
                     dispatch(addProductCarrito(e.target.value));
                 }}
             >
-                Add cart
+                add cart
             </button>
         </div>
     );
