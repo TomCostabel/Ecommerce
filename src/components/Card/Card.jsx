@@ -9,7 +9,7 @@ export default function Card(props) {
 
     return (
         <div
-            className="container-card  
+            className="container-card
         "
         >
             <Link to={`/Product/${props.id}`}>
@@ -19,16 +19,25 @@ export default function Card(props) {
                     alt="imagencard"
                 />
             </Link>
-            <p>US$ {props.price}</p>
             <h6 className="title-font">{props.title}</h6>
-            <button
-                value={props.title}
-                onClick={(e) => {
-                    dispatch(addProductCarrito(e.target.value));
-                }}
+            <br></br>
+
+            <div
+                className="d-flex justify-content-between
+            "
             >
-                add cart
-            </button>
+                <p>US$ {props.price}</p>
+                <button
+                    type="button"
+                    class="buttonclass"
+                    value={props.title}
+                    onClick={(e) => {
+                        dispatch(addProductCarrito(e.target.value));
+                    }}
+                >
+                    add cart
+                </button>
+            </div>
         </div>
     );
 }

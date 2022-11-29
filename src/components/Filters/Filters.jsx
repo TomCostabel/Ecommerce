@@ -18,8 +18,13 @@ export default function Filters() {
     );
     return (
         <div>
-            <select onChange={(e) => handleFilterByCategory(e)}>
-                <option value={"all"}>Categorys</option>
+            <select
+                // class="form-select"
+                // size="3"
+                // aria-label="size 3 select example"
+                onChange={(e) => handleFilterByCategory(e)}
+            >
+                <option value={"all"}>Alls Categories</option>
 
                 {array?.map((e) => (
                     <option key={e} value={e.name}>

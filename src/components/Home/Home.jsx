@@ -17,7 +17,7 @@ export default function Home() {
     const [buscador, setBuscador] = useState([]);
     const [datos, setDatos] = useState([]);
     const dispatch = useDispatch();
-    const itemXPage = 10;
+    const itemXPage = 8;
 
     //------------------------------ "handleChange" --------------------------------------------------->
 
@@ -98,16 +98,18 @@ export default function Home() {
             {loading ? (
                 <h1>Cargando</h1>
             ) : (
-                <div>
-                    <NavBar />
-                    <input
-                        type="text"
-                        placeholder="Buscador..."
-                        value={buscador}
-                        onChange={(e) => handleChange(e)}
-                    />
-                    <Filters />
-                    <div>
+                <div className=" d-flex">
+                    <div className="  container-1 ">
+                        <NavBar />
+                        {/* <input
+                            type="text"
+                            placeholder="Buscador..."
+                            value={buscador}
+                            onChange={(e) => handleChange(e)}
+                        /> */}
+                        {/* <Filters /> */}
+                    </div>
+                    <div className="   container-fluid  container-2 ">
                         <Pagination
                             items={productsActuales?.map((e) => {
                                 return (

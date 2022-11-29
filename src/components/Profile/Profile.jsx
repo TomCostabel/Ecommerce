@@ -1,6 +1,7 @@
 import React from "react";
 import { useAuth0 } from "@auth0/auth0-react";
 import "../Profile/Profile.css";
+import Logout from "../Logout/Logout";
 
 export default function Profile() {
     const { user, isAuthenticated, isLoading } = useAuth0();
@@ -10,11 +11,17 @@ export default function Profile() {
     }
     return (
         isAuthenticated && (
-            <div className="container d-flex justify-content-start profile-container">
-                <div className="row ">
-                    {/* <img className="col " src={user.picture} alt={user.name} /> */}
-                    <h2 className="col-lg-6">{user.nickname}</h2>
-                    <p className="col-lg-6">Email:{user.email}</p>
+            <div className=" d-flex  contenedor ">
+                <div className="d-flex align-items-center justify-content flex-wrap">
+                    {/* <img src={user.image}></img> */}
+                    <h6 className=" d-flex align-items-center nickname">
+                        {user.nickname}
+                    </h6>
+
+                    {/* <p className="   email  ">{user.email}</p> */}
+                </div>
+                <div className=" container ">
+                    <Logout />
                 </div>
             </div>
         )
