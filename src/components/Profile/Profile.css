@@ -1,14 +1,23 @@
+/* body {
+    margin: 0;
+    padding: 0;
+} */
+
 .nickname {
-    margin-top: 10px;
     font-size: 13px;
     font-weight: 700;
 }
 .email {
     font-size: 9px;
 }
+
+.fotito {
+    margin-top: -10px;
+    width: 30px;
+    border-radius: 50%;
+}
 .contenedor {
-    border: solid 1px black;
-    border-radius: 70px;
-    max-width: 160px;
-    max-height: 55px;
+    display: flex;
+
+    align-items: center;
 }

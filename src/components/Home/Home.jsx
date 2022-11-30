@@ -99,7 +99,7 @@ export default function Home() {
                 <h1>Cargando</h1>
             ) : (
                 <div className=" d-flex">
-                    <div className="  container-1 ">
+                    <div className="  container-1 d-flex align-items-start ">
                         <NavBar />
                         {/* <input
                             type="text"
