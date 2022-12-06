@@ -12,7 +12,7 @@ export default function Pagination(props) {
                 >
                     &#8592;
                 </h3>
-                <h4>PAGE {props.currentPage + 1}</h4>
+                {/* <h4>PAGE {props.currentPage + 1}</h4> */}
                 <h3 className="botonPrevNext" onClick={props.nextHandler}>
                     &#8594;
                 </h3>

@@ -1,11 +1,14 @@
+import { useAuth0 } from "@auth0/auth0-react";
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getAllProducts } from "../../redux/actions";
 import Card from "../Card/Card";
 import Filters from "../Filters/Filters";
 import "../Home/Home.css";
+import { LoginButton } from "../Login/Login";
 import NavBar from "../NavBar/NavBar";
 import Pagination from "../Pagination/Pagination";
+import Profile from "../Profile/Profile";
 
 export default function Home() {
     //------------------------------ "CONSTANTES" -------------------------------------------------->
@@ -17,6 +20,7 @@ export default function Home() {
     const [buscador, setBuscador] = useState([]);
     const [datos, setDatos] = useState([]);
     const dispatch = useDispatch();
+    const { user, isAuthenticated } = useAuth0();
     const itemXPage = 8;
 
     //------------------------------ "handleChange" --------------------------------------------------->
@@ -110,23 +114,59 @@ export default function Home() {
                         {/* <Filters /> */}
                     </div>
                     <div className="   container-fluid  container-2 ">
-                        <Pagination
-                            items={productsActuales?.map((e) => {
-                                return (
-                                    <Card
-                                        key={e.id}
-                                        id={e.id}
-                                        title={e.title}
-                                        images={e.images}
-                                        price={e.price}
-                                        category={e.category}
+                        <div className="d-flex justify-content-between align-items-end navBarInterna">
+                            <div className="Titulo ">Welcome to... </div>
+                            <input
+                                className="buscador"
+                                type="text"
+                                placeholder="🔎 Search here..."
+                                value={buscador}
+                                onChange={(e) => handleChange(e)}
+                            />
+                            {isAuthenticated ? <Profile /> : <LoginButton />}
+                        </div>
+                        <div className="d-flex contenidoPrincipal">
+                            <div>
+                                <div className="lateral">Holas 2 </div>
+                                <br />
+                                <br />
+                                <div className="lateral">Holas 2 </div>
+                                <br />
+                                <br />
+
+                                <div className="lateral">Holas 2 </div>
+                                <br />
+                                <br />
+
+                                <div className="lateral">Holas 2 </div>
+                            </div>
+                            <div>
+                                <div className="d-flex container-carteles">
+                                    <div className="cartel">Hola</div>
+                                    <div className="cartel-2">Hola</div>
+                                    <div className="cartel-3">Hola</div>
+                                </div>
+                                <div className="container-pagination">
+                                    <Pagination
+                                        items={productsActuales?.map((e) => {
+                                            return (
+                                                <Card
+                                                    key={e.id}
+                                                    id={e.id}
+                                                    title={e.title}
+                                                    images={e.images}
+                                                    price={e.price}
+                                                    category={e.category}
+                                                />
+                                            );
+                                        })}
+                                        currentPage={currentPage}
+                                        nextHandler={nextHandler}
+                                        prevHandler={prevHandler}
                                     />
-                                );
-                            })}
-                            currentPage={currentPage}
-                            nextHandler={nextHandler}
-                            prevHandler={prevHandler}
-                        />
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             )}
