@@ -1,39 +1,61 @@
-.container-1 {
-    background-color: rgb(255, 255, 255);
+body {
+    height: 500px;
+    background-image: url("../../Imagenes/1.png");
+    background-repeat: no-repeat;
+    background-position-x: start;
+    background-position-y: start;
+    /* background-size: 10rem; */
+}
+
+.container-inicial {
+    display: inline-grid;
+    height: 100vh;
+    width: 100%;
+}
+.centrado {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container-navbar {
+    background-color: rgb(255, 251, 251);
     border-top-left-radius: 50px;
+    height: 90vh;
+    border-bottom-left-radius: 50px;
+    width: 170px;
 }
 
 .container-2 {
     align-items: center;
 
-    border-top-left-radius: 50px;
-    border-bottom-left-radius: 50px;
-    background-color: rgb(0, 0, 0);
-    min-height: 100vh;
+    /* border-radius: 50px; */
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 50px;
+
+    background-color: rgb(2, 2, 2);
+    height: 90vh;
+    width: 80%;
 }
 .container-carteles {
     gap: 50px;
 }
 .container-pagination {
     width: 1000px;
-    height: 570px;
-    border-radius: 50px;
-    /* background-color: #161515; */
-    background-color: #1b1b1b;
+    height: 502px;
 }
-
 .lateral {
-    color: #dd924f;
+    color: #161515;
     border: 1px solid #161515;
     background-color: #1b1b1b;
     height: 150px;
-    width: 300px;
+    width: 400px;
     border-radius: 20px;
 }
 
 .cartel {
     border-radius: 25px;
-    height: 250px;
+    height: 210px;
     width: 250px;
     border: 1px solid #7f9e8c;
     background-color: #7f9e8c;
@@ -44,7 +66,7 @@
 }
 .cartel-2 {
     border-radius: 25px;
-    height: 250px;
+    height: 210px;
     width: 250px;
     border: 1px solid #dd924f;
     background-color: #dd924f;
@@ -56,7 +78,7 @@
 
 .cartel-3 {
     border-radius: 25px;
-    height: 250px;
+    height: 210px;
     width: 250px;
     border: 1px solid #b4a193;
     background-color: #b4a193;
@@ -83,4 +105,11 @@
     font-size: 30px;
     font-weight: 600;
     margin-left: 20px;
+}
+
+.conteiner-central {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 30px;
 }

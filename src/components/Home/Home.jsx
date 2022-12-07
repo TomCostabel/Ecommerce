@@ -102,68 +102,74 @@ export default function Home() {
             {loading ? (
                 <h1>Cargando</h1>
             ) : (
-                <div className=" d-flex">
-                    <div className="  container-1 d-flex align-items-start ">
-                        <NavBar />
-                        {/* <input
-                            type="text"
-                            placeholder="Buscador..."
-                            value={buscador}
-                            onChange={(e) => handleChange(e)}
-                        /> */}
-                        {/* <Filters /> */}
-                    </div>
-                    <div className="   container-fluid  container-2 ">
-                        <div className="d-flex justify-content-between align-items-end navBarInterna">
-                            <div className="Titulo ">Welcome to... </div>
-                            <input
-                                className="buscador"
-                                type="text"
-                                placeholder="🔎 Search here..."
-                                value={buscador}
-                                onChange={(e) => handleChange(e)}
-                            />
-                            {isAuthenticated ? <Profile /> : <LoginButton />}
+                <div className="  container-inicial">
+                    <div className="centrado">
+                        <div className="     container-navbar">
+                            <NavBar />
                         </div>
-                        <div className="d-flex contenidoPrincipal">
-                            <div>
-                                <div className="lateral">Holas 2 </div>
-                                <br />
-                                <br />
-                                <div className="lateral">Holas 2 </div>
-                                <br />
-                                <br />
-
-                                <div className="lateral">Holas 2 </div>
-                                <br />
-                                <br />
-
-                                <div className="lateral">Holas 2 </div>
+                        <div className="     container-2 ">
+                            <div className="d-flex justify-content-between align-items-end navBarInterna">
+                                <div className="Titulo ">Welcome to... </div>
+                                <input
+                                    className="buscador"
+                                    type="text"
+                                    placeholder="🔎 Search here..."
+                                    value={buscador}
+                                    onChange={(e) => handleChange(e)}
+                                />
+                                {isAuthenticated ? (
+                                    <Profile />
+                                ) : (
+                                    <LoginButton />
+                                )}
                             </div>
-                            <div>
-                                <div className="d-flex container-carteles">
-                                    <div className="cartel">Hola</div>
-                                    <div className="cartel-2">Hola</div>
-                                    <div className="cartel-3">Hola</div>
+                            <div
+                                className="d-flex contenidoPrincipal justify-content-around
+                        "
+                            >
+                                <div>
+                                    <div className="lateral">Holas 2 </div>
+                                    <br />
+                                    <br />
+                                    <div className="lateral">Holas 2 </div>
+                                    <br />
+                                    <br />
+
+                                    <div className="lateral">Holas 2 </div>
+                                    <br />
+                                    <br />
+
+                                    <div className="lateral">Holas 2 </div>
                                 </div>
-                                <div className="container-pagination">
-                                    <Pagination
-                                        items={productsActuales?.map((e) => {
-                                            return (
-                                                <Card
-                                                    key={e.id}
-                                                    id={e.id}
-                                                    title={e.title}
-                                                    images={e.images}
-                                                    price={e.price}
-                                                    category={e.category}
-                                                />
-                                            );
-                                        })}
-                                        currentPage={currentPage}
-                                        nextHandler={nextHandler}
-                                        prevHandler={prevHandler}
-                                    />
+                                <div className="conteiner-central">
+                                    <div className="d-flex container-carteles">
+                                        <div className="cartel">Hola</div>
+                                        <div className="cartel-2">Hola</div>
+                                        <div className="cartel-3">Hola</div>
+                                    </div>
+                                    <div className="container-pagination">
+                                        <Pagination
+                                            items={productsActuales?.map(
+                                                (e) => {
+                                                    return (
+                                                        <Card
+                                                            key={e.id}
+                                                            id={e.id}
+                                                            title={e.title}
+                                                            images={e.images}
+                                                            price={e.price}
+                                                            category={
+                                                                e.category
+                                                            }
+                                                        />
+                                                    );
+                                                }
+                                            )}
+                                            currentPage={currentPage}
+                                            nextHandler={nextHandler}
+                                            prevHandler={prevHandler}
+                                        />
+                                    </div>
                                 </div>
                             </div>
                         </div>

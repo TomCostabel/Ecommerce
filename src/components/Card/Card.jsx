@@ -23,10 +23,10 @@ export default function Card(props) {
             <br></br>
 
             <div
-                className="d-flex justify-content-between
+                className="d-flex justify-content-between align-items-end
             "
             >
-                <p>US$ {props.price}</p>
+                <p className="price">US$ {props.price}</p>
                 <button
                     type="button"
                     class="buttonclass"
@@ -35,7 +35,7 @@ export default function Card(props) {
                         dispatch(addProductCarrito(e.target.value));
                     }}
                 >
-                    add cart
+                    Add🛒
                 </button>
             </div>
         </div>

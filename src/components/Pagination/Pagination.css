@@ -1,40 +1,38 @@
-.container-buttons {
+.container {
     display: flex;
-    /* justify-content: center;
     align-items: center;
-    background-color: #683217;
-    width: 250px;
-    height: 50px;
-    margin-top: 30px;
-    border-radius: 50px;
-    margin-inline: auto;
-    margin-top: 20px;
-  
-    background: rgba(255, 255, 255, 0.27);
-    border-radius: 16px;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(8.8px);
-    -webkit-backdrop-filter: blur(8.8px); */
+    justify-content: center;
 }
+.container-pagination {
+    width: 1000px;
+    height: 502px;
+    border-radius: 30px;
 
+    background-color: #1b1b1b;
+}
 .container-cards {
-    margin-top: -2px;
     display: flex;
-    align-items: center;
     flex-wrap: wrap;
-    justify-content: space-around;
-    gap: 35px;
-    margin-left: -15px;
+    align-items: center;
+    justify-content: center;
+    height: 502px;
+    width: 900px;
+    padding: 0;
+    gap: 20px;
 }
 
 .botonPrevNext {
-    background-color: #000000;
-
-    color: rgb(252, 252, 252);
-    display: block;
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    cursor: pointer;
+    display: flex;
     margin-inline: auto;
+    align-items: flex-end;
+    justify-content: center;
+    border-radius: 4px;
+    /* margin-top: 10px; */
+    height: 30px;
+    width: 30px;
+
+    background-color: #ffffff;
+    color: #000000;
+
+    cursor: pointer;
 }
