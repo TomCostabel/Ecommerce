@@ -4,11 +4,13 @@
     justify-content: center;
 }
 .container-pagination {
+    margin-right: 30px;
+    /* margin-top: -10px; */
     width: 1000px;
     height: 502px;
     border-radius: 30px;
 
-    background-color: #1b1b1b;
+    background-color: #ffffff;
 }
 .container-cards {
     display: flex;
@@ -31,8 +33,8 @@
     height: 30px;
     width: 30px;
 
-    background-color: #ffffff;
-    color: #000000;
+    background-color: #000000;
+    color: #ffffff;
 
     cursor: pointer;
 }

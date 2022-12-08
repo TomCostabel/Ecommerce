@@ -107,6 +107,7 @@ export default function Home() {
                         <div className="     container-navbar">
                             <NavBar />
                         </div>
+
                         <div className="     container-2 ">
                             <div className="d-flex justify-content-between align-items-end navBarInterna">
                                 <div className="Titulo ">Welcome to... </div>
@@ -127,19 +128,14 @@ export default function Home() {
                                 className="d-flex contenidoPrincipal justify-content-around
                         "
                             >
-                                <div>
-                                    <div className="lateral">Clothing </div>
-                                    <br />
-                                    <br />
-                                    <div className="lateral1">Summer </div>
-                                    <br />
-                                    <br />
+                                <div className="container-laterales">
+                                    <div className="lateral">CLOTHING </div>
 
-                                    <div className="lateral2">MakeUp </div>
-                                    <br />
-                                    <br />
+                                    <div className="lateral1">SUMMER </div>
 
-                                    <div className="lateral3">Sport </div>
+                                    <div className="lateral2">MAKEUP </div>
+
+                                    <div className="lateral3">SPORT </div>
                                 </div>
                                 <div className="conteiner-central">
                                     <div className="d-flex container-carteles">

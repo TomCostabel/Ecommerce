@@ -18,6 +18,7 @@ body {
 
 .container-navbar {
     background-color: #ffffff;
+
     border-top-left-radius: 50px;
     height: 90vh;
     border-bottom-left-radius: 50px;
@@ -27,7 +28,7 @@ body {
 .container-2 {
     align-items: center;
 
-    /* border-radius: 50px; */
+    border-radius: 50px;
     border-top-right-radius: 50px;
     border-bottom-right-radius: 50px;
 
@@ -35,15 +36,23 @@ body {
     height: 90vh;
     width: 80%;
 }
+
 .container-carteles {
     gap: 50px;
 }
-.container-pagination {
+/* .container-pagination {
     width: 1000px;
     height: 502px;
+} */
+.container-laterales {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
 }
 .lateral {
     display: flex;
+    cursor: pointer;
     align-items: center;
     justify-content: center;
 
@@ -51,7 +60,6 @@ body {
     background-size: cover;
     background-position-x: 0;
     background-position-y: -20px;
-    background-repeat: no-repeat;
 
     color: #ffffff;
     border: 1px solid #161515;
@@ -59,13 +67,26 @@ body {
     height: 150px;
     width: 400px;
     border-radius: 20px;
+    /* margin-bottom: -20px; */
     font-size: 22px;
     font-weight: 900;
     -webkit-text-stroke: 1px #ffffff63;
     color: rgba(0, 0, 0, 0.315);
+    transition: 0.7s;
+}
+.lateral:hover {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+        url("../../Imagenes/66.jpg");
+
+    transition: 0.7s;
+
+    -webkit-text-stroke: 2px #6d5442;
+
+    color: rgb(255, 255, 255);
 }
 .lateral1 {
     display: flex;
+    cursor: pointer;
     align-items: center;
     justify-content: center;
 
@@ -84,19 +105,21 @@ body {
     font-weight: 900;
     -webkit-text-stroke: 1px #ffffff63;
     color: rgba(0, 0, 0, 0.315);
-    transition: 1s;
+    transition: 0.3s;
 }
 .lateral1:hover {
-    background-image: url("../../Imagenes/55.jpg");
-    backdrop-filter: blur(10px);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+        url("../../Imagenes/44.jpg");
 
-    transition: 1s;
-    -webkit-text-stroke: 1px #000000;
+    transition: 0.3s;
 
-    color: rgba(255, 255, 255, 0.452);
+    -webkit-text-stroke: 2px #3f4f59;
+
+    color: rgb(255, 255, 255);
 }
 .lateral2 {
     display: flex;
+    cursor: pointer;
     align-items: center;
     justify-content: center;
     background-image: url("../../Imagenes/88.jpg");
@@ -113,9 +136,21 @@ body {
     font-weight: 900;
     -webkit-text-stroke: 1px #ffffff63;
     color: rgba(0, 0, 0, 0.315);
+    transition: 0.7s;
+}
+.lateral2:hover {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+        url("../../Imagenes/88.jpg");
+
+    transition: 0.3s;
+
+    -webkit-text-stroke: 2px #585457;
+
+    color: rgb(255, 255, 255);
 }
 .lateral3 {
     display: flex;
+    cursor: pointer;
     align-items: center;
     justify-content: center;
 
@@ -133,11 +168,21 @@ body {
     font-weight: 900;
     -webkit-text-stroke: 1px #ffffff63;
     color: rgba(0, 0, 0, 0.315);
+    transition: 0.7s;
 }
+.lateral3:hover {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+        url("../../Imagenes/77.jpg");
 
+    transition: 0.3s;
+
+    -webkit-text-stroke: 1.3px #391a18;
+
+    color: rgb(255, 255, 255);
+}
 .cartel {
     border-radius: 25px;
-    height: 210px;
+    height: 180px;
     width: 250px;
     border: 1px solid #7f9e8c;
     background-color: #7f9e8c;
@@ -148,7 +193,8 @@ body {
 }
 .cartel-2 {
     border-radius: 25px;
-    height: 210px;
+    height: 180px;
+
     width: 250px;
     border: 1px solid #dd924f;
     background-color: #dd924f;
@@ -160,7 +206,8 @@ body {
 
 .cartel-3 {
     border-radius: 25px;
-    height: 210px;
+    height: 180px;
+
     width: 250px;
     border: 1px solid #b4a193;
     background-color: #b4a193;
@@ -181,6 +228,7 @@ body {
     border-color: #161515;
     height: 40px;
     width: 500px;
+    color: white;
 }
 .Titulo {
     color: white;
