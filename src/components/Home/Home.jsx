@@ -128,18 +128,18 @@ export default function Home() {
                         "
                             >
                                 <div>
-                                    <div className="lateral">Holas 2 </div>
+                                    <div className="lateral">Clothing </div>
                                     <br />
                                     <br />
-                                    <div className="lateral">Holas 2 </div>
-                                    <br />
-                                    <br />
-
-                                    <div className="lateral">Holas 2 </div>
+                                    <div className="lateral1">Summer </div>
                                     <br />
                                     <br />
 
-                                    <div className="lateral">Holas 2 </div>
+                                    <div className="lateral2">MakeUp </div>
+                                    <br />
+                                    <br />
+
+                                    <div className="lateral3">Sport </div>
                                 </div>
                                 <div className="conteiner-central">
                                     <div className="d-flex container-carteles">

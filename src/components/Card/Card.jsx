@@ -29,7 +29,7 @@ export default function Card(props) {
                 <p className="price">US$ {props.price}</p>
                 <button
                     type="button"
-                    class="buttonclass"
+                    className="buttonclass"
                     value={props.title}
                     onClick={(e) => {
                         dispatch(addProductCarrito(e.target.value));
